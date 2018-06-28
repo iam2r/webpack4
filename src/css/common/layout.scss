@@ -1,0 +1,17 @@
+$yh:"Microsoft yahei";
+html {
+    //    font-size: 62.5%; 
+       font-family:$yh;
+       font-size:-webkit-calc(100vw/7.5);
+}
+
+html,body,#app,.router{
+    width:100%;
+    height: 100%;
+    background: #f7f7f7;
+}
+.homeslide{
+    display: block;
+    width: 100%;
+    height: auto;
+}
