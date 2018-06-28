@@ -50,7 +50,7 @@ module.exports = {
   resolve: {
     extensions: [".js", ".vue", ".ts", ".json"],
     alias: {
-      'vue': 'vue/dist/vue.js',
+     
     } //配置别名可以加快webpack查找模块的速度
   },
   module: {
@@ -157,7 +157,6 @@ module.exports = {
     new VueLoaderPlugin(),
     new webpack.ProvidePlugin({
       axios: 'axios',
-      Vue: 'vue'
     }),
     new CopyWebpackPlugin([
       {

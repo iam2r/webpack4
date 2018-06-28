@@ -1,8 +1,8 @@
 import * as PIXI from 'pixi.js';
 import 'pixi-sound';
+require('vue');
 import { isHit, keyboard, contain, getRadian, random } from "./tools/utils"
-require('vue')
-require('vuex')
+
 let Application = PIXI.Application,
 	Container = PIXI.Container,
 	loader = PIXI.loader,
@@ -20,7 +20,6 @@ const app = new PIXI.Application({
 	resolution: 1,     // default: 1
 	// backgroundColor: 0x1099bb,
 });
-
 app.renderer.view.style.position = "absolute";
 app.renderer.view.style.display = "block";
 app.renderer.autoResize = true;
@@ -153,8 +152,8 @@ const play = (delta) => {
 	//判断是否死亡
 	if (healthBar.outer.width < 0) {
 		healthBar.outer.width = 0;
-		// state = end;
-		// message.text = "You lost!";
+		state = end;
+		message.text = "You lost!";
 		// stopCreateBlobs();
 	}
 	//

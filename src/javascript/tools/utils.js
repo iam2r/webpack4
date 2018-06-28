@@ -1,7 +1,6 @@
-const crypto = require('crypto');
 
 export const md5 = password => {
-	return crypto.createHash('md5').update(password).digest('hex');
+	return require('crypto').createHash('md5').update(password).digest('hex');
 }
 
 export const Storage = {
