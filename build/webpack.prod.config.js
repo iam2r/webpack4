@@ -49,19 +49,6 @@ const prodWebpackConfig = merge(baseConfig, {
             dry: false,
         }),
         new webpack.HashedModuleIdsPlugin(),
-        new webpack.NamedChunksPlugin(chunk => {
-            if (chunk.name) {
-                return chunk.name;
-            }
-
-            // eslint-disable-next-line no-underscore-dangle
-            return [...chunk._modules]
-                .map(m => path.relative(
-                    m.context,
-                    m.userRequest.substring(0, m.userRequest.lastIndexOf('.')),
-                ))
-                .join('_');
-        }),
         new MiniCssExtractPlugin({
             filename: 'css/[name].[chunkhash:8].css',
             chunkFilename: "css/[id].[chunkhash:8].css"

@@ -52,7 +52,8 @@ module.exports = {
   output: {
     path: utils.resolve('dist'),
     publicPath: utils.isDev() ? config.dev.publicPath : config.build.publicPath,//这里要放的是静态资源CDN的地址(一般只在生产环境下配置)
-    filename: utils.isDev() ? 'js/[name].js' : 'js/[name].[hash].js'
+    filename: utils.isDev() ? 'js/[name].js' : 'js/[name].[hash].js',
+    chunkFilename: 'js/[name].[chunkhash:5].chunk.js'
   },
   resolve: {
     extensions: [".js", ".vue", ".ts", ".json"],
