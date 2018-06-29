@@ -1,5 +1,6 @@
 import "./css/index.scss";
-import "./javascript";
+// import "./javascript";
+import "./typescript";
 
 
 

@@ -107,7 +107,7 @@ module.exports = {
           }
         ]:[
           {
-            loader: 'babel-loader'
+            loader: 'happypack/loader?id=happy-babel-js'
           },
           {
             loader: 'awesome-typescript-loader'
