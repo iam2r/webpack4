@@ -1,7 +1,37 @@
-import * as crypto from 'crypto'
-
-export const md5 = password => {
-	return crypto.createHash('md5').update(password).digest('hex');
+class Key {
+	constructor(keyCode) {
+		this.code = keyCode;
+		this.isDown = false;
+		this.isUp = true;
+		this.press = undefined;
+		this.release = undefined;
+		this.addEventListener();
+	}
+	addEventListener() {
+		window.addEventListener(
+			"keydown", this.downHandler.bind(this), false
+		);
+		window.addEventListener(
+			"keyup", this.upHandler.bind(this), false
+		);
+	}
+	downHandler(e) {
+		if (e.keyCode === this.code) {
+			console.log(e.keyCode)
+			if (this.isUp && this.press) this.press();
+			this.isDown = true;
+			this.isUp = false;
+		}
+		event.preventDefault();
+	}
+	upHandler(e) {
+		if (e.keyCode === this.code) {
+			if (this.isDown && this.release) this.release();
+			this.isDown = false;
+			this.isUp = true;
+		}
+		event.preventDefault();
+	}
 }
 
 export const Storage = {
@@ -116,42 +146,9 @@ export const isHit = (r1, r2) => {
 	}
 	return hit;
 }
+
 export const keyboard = keyCode => {
-	var key = {};
-	key.code = keyCode;
-	key.isDown = false;
-	key.isUp = true;
-	key.press = undefined;
-	key.release = undefined;
-	//The `downHandler`
-	key.downHandler = (event) => {
-		console.log(event.keyCode)
-		if (event.keyCode === key.code) {
-			if (key.isUp && key.press) key.press();
-			key.isDown = true;
-			key.isUp = false;
-		}
-		event.preventDefault();
-	};
-
-	//The `upHandler`
-	key.upHandler = (event) => {
-		if (event.keyCode === key.code) {
-			if (key.isDown && key.release) key.release();
-			key.isDown = false;
-			key.isUp = true;
-		}
-		event.preventDefault();
-	};
-
-	//Attach event listeners
-	window.addEventListener(
-		"keydown", key.downHandler.bind(key), false
-	);
-	window.addEventListener(
-		"keyup", key.upHandler.bind(key), false
-	);
-	return key;
+	return new Key(keyCode);
 }
 export const contain = (sprite, container) => {
 
