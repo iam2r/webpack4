@@ -25,9 +25,9 @@ for (const key in cacheGroups) {
 }
 
 //循环模板构建多个Html及创建对应入口
-utils.getFileNameList('./src/page', 'html').forEach(page => {
+utils.getFileNameList('./src', 'html').forEach(page => {
   HtmlWebpackPlugins.push(new HtmlWebpackPlugin({//构建多个html
-    template: path.resolve(__dirname, `../src/page/${page}.html`),
+    template: path.resolve(__dirname, `../src/${page}.html`),
     title: page,
     filename: `${page}.html`,
     inject: 'body',

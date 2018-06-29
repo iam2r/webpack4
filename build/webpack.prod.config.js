@@ -44,7 +44,7 @@ const prodWebpackConfig = merge(baseConfig, {
     plugins: [
         new CleanWebpackPlugin(['dist'], {
             root: path.join(__dirname, '..'),
-            exclude: ['vendor'],
+            // exclude: ['vendor'],
             verbose: true,
             dry: false,
         }),
