@@ -103,7 +103,7 @@ module.exports = {
         exclude: /node_modules/,
         use: utils.isDev() ?[
           {
-            loader: 'ts-loader'
+            loader: 'awesome-typescript-loader'
           }
         ]:[
           {
