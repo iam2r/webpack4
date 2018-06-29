@@ -27,14 +27,14 @@ module.exports = {
 		assetsSubDirectory: 'assets',
 		cacheGroups: {
 			vue: {
-				test: /[\\/]vue[\\/]/,
-				name: 'vue',
+				test: /node_modules[\\/]vue/,
+				name: 'vueAll',
 				chunks: 'initial',
 				enforce: true
 			},
 			pixi: {
-				test: /[\\/]pixi\.js[\\/]/,
-				name: 'pixi',
+				test: /node_modules[\\/]pixi/,
+				name: 'pixiAll',
 				chunks: 'initial',
 				enforce: true
 			},

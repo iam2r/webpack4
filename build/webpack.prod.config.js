@@ -7,6 +7,7 @@ const baseConfig = require('./webpack.base')
 const merge = require('webpack-merge')
 const WebpackParallelUglifyPlugin = require('webpack-parallel-uglify-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin') //CSS文件单独提取出来
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const cacheGroups = require('./config').build.cacheGroups
 const prodWebpackConfig = merge(baseConfig, {
@@ -65,8 +66,7 @@ const prodWebpackConfig = merge(baseConfig, {
             filename: 'css/[name].[chunkhash:8].css',
             chunkFilename: "css/[id].[chunkhash:8].css"
         }),
-
-
+        new BundleAnalyzerPlugin()
     ]
 })
 module.exports = prodWebpackConfig;

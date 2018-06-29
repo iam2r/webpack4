@@ -4,7 +4,7 @@
   "description": "learn webpack4 config change",
   "main": "index.js",
   "scripts": {
-    "build": "cross-env NODE_ENV='production' webpack --config build/webpack.prod.config.js --mode production",
+    "build": "cross-env NODE_ENV='production' webpack --config build/webpack.prod.config.js --mode production --report",
     "dev": "cross-env NODE_ENV='development' webpack-dev-server --config build/webpack.dev.config.js --mode development --hot",
     "dll": "webpack --config build/webpack.dll.config.js --mode development",
     "serve": "http-server ./dist -o"
@@ -51,6 +51,7 @@
     "vue-loader": "^15.2.4",
     "vue-template-compiler": "^2.5.16",
     "webpack": "^4.11.1",
+    "webpack-bundle-analyzer": "^2.13.1",
     "webpack-cli": "^3.0.3",
     "webpack-dev-server": "^3.1.4",
     "webpack-merge": "^4.1.2",
