@@ -15,7 +15,14 @@ const config = require('./config')
 //创建入口
 const Entries = {};
 const HtmlWebpackPlugins = [];
-const htmlChunks = Object.keys(config.build.cacheGroups);
+const cacheGroups = config.build.cacheGroups;
+const htmlChunks = [];
+for (const key in cacheGroups) {
+  if (cacheGroups.hasOwnProperty(key)) {
+    const element = cacheGroups[key];
+    htmlChunks.push(element.name)
+  }
+}
 
 //循环模板构建多个Html及创建对应入口
 utils.getFileNameList('./src/page', 'html').forEach(page => {
