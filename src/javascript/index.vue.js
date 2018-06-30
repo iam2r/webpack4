@@ -3,11 +3,9 @@ import App from './App'
 
 new Vue({
     el: '#app',
-    components: { App },
+    // components: { App },
     // template: '<App/>'
-    render (h) {
-      return h('App')
-    }
+    render: h => h(App)
   })
   //用template: '<App/>'写法需要编译环境。    换成函数写法。
   
