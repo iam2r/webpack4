@@ -1,17 +1,37 @@
-$yh:"Microsoft yahei";
+@import './config';
+/*
+    designWidth/oneRemForDesignWidth = screenWidth/oneRemForScreenWidth恒成立
+    已知screenWidth = 100vw，designWidth = 750px时，oneRemForDesignWidth = 100px
+    求oneRemForScreenWidth
+    oneRemForScreenWidth = screenWidth/（designWidth/oneRemForDesignWidth）
+                       = 100vw/（750px/100px）
+*/
+
 html {
-    //    font-size: 62.5%; 
-       font-family:$yh;
-       font-size:-webkit-calc(100vw/7.5);
+    font-family: $yh;
+    font-size:calc(100vw/#{$k});
+    @media screen and (max-width: $minScreenWidth) {
+        font-size: $minScreenWidth/#{$k}
+    }
+    @media screen and (min-width:$maxScreenWidth) {
+        font-size: $maxScreenWidth/#{$k}
+    }
 }
 
-html,body,#app,.router{
-    width:100%;
-    height: 100%;
-    background: #f7f7f7;
+body {
+    font-size: 16PX;
 }
-.homeslide{
-    display: block;
+
+html,
+body,
+#app {
     width: 100%;
-    height: auto;
+    height: 100%;
+}
+
+.container {
+    max-width: $maxScreenWidth;
+    min-width: $minScreenWidth;
+    width: $containerWidth;
+    margin: 0 auto;
 }

@@ -1,0 +1,22 @@
+//index
+$hH:88PX;
+$fH:98PX;
+$mC:#ff4a83;
+//layout 
+$yh:"Microsoft yahei";
+$oneRemForDesignWidth:100PX;
+
+//PC
+// $designWidth:1920PX;
+// $minScreenWidth:320PX;
+// $maxScreenWidth:1200PX;
+// $containerWidth:1000px;
+
+//移动
+$designWidth:750PX;
+$minScreenWidth:320PX;
+$maxScreenWidth:540PX;
+$containerWidth:100%;
+
+$k:$designWidth/$oneRemForDesignWidth;
+//大写PX  不会被编译成rem 小写px均会编译成rem

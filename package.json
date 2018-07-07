@@ -61,7 +61,6 @@
   "dependencies": {
     "@types/pixi.js": "^4.7.5",
     "axios": "^0.18.0",
-    "babel-polyfill": "^6.26.0",
     "mint-ui": "^2.2.13",
     "moment": "^2.22.1",
     "pixi-sound": "^2.0.2",

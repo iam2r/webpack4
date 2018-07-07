@@ -5,12 +5,37 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0,
   maximum-scale=1.0, user-scalable=no">
+  <script>
+    window.createMeta = function () {
+      var dpr = window.devicePixelRatio || 1;
+      var scale = 1 / dpr;
+      var meta = window.document.querySelector('meta[name="viewport"]');
+      meta || (meta = window.document.createElement("meta"), meta.setAttribute("name", "viewport"), window.document.head.appendChild(meta));
+      meta.setAttribute("content", "width=device-width,user-scalable=no,initial-scale=" + scale + ",maximum-scale=" + scale + ",minimum-scale=" + scale + ",user-scalable=no");
+    }
+    // createMeta();
+  </script>
+
+
+
+
   <title>treasureHunter</title>
 </head>
+
 <body>
   <div id="app"></div>
   <%if(htmlWebpackPlugin.options.parmas.dllVendorPath){%>
-  <script src="<%= htmlWebpackPlugin.options.parmas.dllVendorPath %>"></script>
-  <%}%>
+    <script src="<%= htmlWebpackPlugin.options.parmas.dllVendorPath %>"></script>
+    <%}%>
 </body>
+<script>
+  //设置默认字体大小
+  window.setDefaultFontSize = function () {
+    var dpr = window.devicePixelRatio || 1;
+    window.document.querySelector('body').style.fontSize = dpr * 16 + 'px';
+  }
+  // setDefaultFontSize()
+
+</script>
+
 </html>
