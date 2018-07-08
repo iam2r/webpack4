@@ -2,8 +2,7 @@ window.Promise = Promise;//兼容IE
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-
-
+console.log('123123')
 new Vue({
   el: '#app',
   router,
